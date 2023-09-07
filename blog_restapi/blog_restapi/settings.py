@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'apps.blog',
     'apps.user_management',
 ]
@@ -76,11 +77,15 @@ WSGI_APPLICATION = 'blog_restapi.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+       'default': {
+           'ENGINE': 'djongo',
+           'NAME': 'blog_db',
+           'ENFORCE_SCHEMA': False,
+           'HOST': 'localhost',
+           'PORT': 27017, 
+       }
+   }
+
 
 
 # Password validation
